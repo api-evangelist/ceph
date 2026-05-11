@@ -1,0 +1,69 @@
+aid: ceph
+name: Ceph
+description: >-
+  Ceph is an open source, distributed storage platform that provides unified
+  object, block, and file storage on commodity hardware with no single point
+  of failure. The Ceph Manager (ceph-mgr) ships with a RESTful API that
+  exposes the same operations available in the Ceph Dashboard for managing
+  pools, OSDs, hosts, monitors, RGW, RBD, CephFS, and cluster configuration.
+  The API is OpenAPI 3.0 compliant and authenticates via JWT bearer tokens.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Storage
+  - Distributed Storage
+  - Object Storage
+  - Block Storage
+  - File Storage
+  - Open Source
+  - Software-Defined Storage
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/ceph/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: ceph:restful-api
+    name: Ceph RESTful API
+    description: >-
+      RESTful API exposed by the Ceph Manager dashboard module for managing
+      and monitoring a Ceph cluster, including pools, OSDs, hosts, monitors,
+      RGW, RBD, CephFS, users, and cluster configuration. Authentication uses
+      a JWT obtained from /api/auth, and versioning is negotiated via the
+      Accept header (application/vnd.ceph.api.v{major}.{minor}+json).
+    humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+    baseURL: https://{manager_host}:{dashboard_port}/api
+    tags:
+      - Storage
+      - Cluster Management
+      - Pools
+      - OSD
+      - Monitors
+      - RGW
+      - RBD
+      - CephFS
+      - JWT
+    properties:
+      - type: Documentation
+        url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+      - type: OpenAPI
+        url: https://{manager_host}:{dashboard_port}/docs/api.json
+      - type: Swagger UI
+        url: https://{manager_host}:{dashboard_port}/docs
+      - type: Source Code
+        url: https://github.com/ceph/ceph
+
+common:
+  - type: Website
+    url: https://ceph.io
+  - type: Documentation
+    url: https://docs.ceph.com
+  - type: GitHub Organization
+    url: https://github.com/ceph
+  - type: Mailing Lists
+    url: https://ceph.io/en/community/connect/
+  - type: Foundation
+    url: https://ceph.io/en/foundation/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
