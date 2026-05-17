@@ -58,7 +58,7 @@ common:
     url: https://ceph.io
   - type: Documentation
     url: https://docs.ceph.com
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/ceph
   - type: Mailing Lists
     url: https://ceph.io/en/community/connect/
