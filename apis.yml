@@ -54,6 +54,8 @@ apis:
         url: https://github.com/ceph/ceph
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ceph
   - type: Website
     url: https://ceph.io
   - type: Documentation
