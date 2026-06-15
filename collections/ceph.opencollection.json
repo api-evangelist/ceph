@@ -1,0 +1,337 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain JWT token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate with username and password to obtain a JWT for subsequent calls."
+        },
+        {
+          "info": {
+            "name": "Validate token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth/check",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate the current bearer token."
+        },
+        {
+          "info": {
+            "name": "Logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth/logout"
+          },
+          "docs": "Revoke the current authentication session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cluster",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get cluster status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster"
+          },
+          "docs": "Retrieve cluster health and status information."
+        },
+        {
+          "info": {
+            "name": "Update cluster state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify cluster operational state."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Ceph users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user"
+          },
+          "docs": "List Ceph users and associated capability data."
+        },
+        {
+          "info": {
+            "name": "Create Ceph user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Ceph user with permissions/capabilities."
+        },
+        {
+          "info": {
+            "name": "Update Ceph user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify existing user capabilities."
+        },
+        {
+          "info": {
+            "name": "Delete Ceph user(s)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user/:user_entities",
+            "params": [
+              {
+                "name": "user_entities",
+                "value": "",
+                "type": "path",
+                "description": "Comma-separated list of user entity identifiers (e.g., client.admin)."
+              }
+            ]
+          },
+          "docs": "Remove one or more Ceph user accounts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cluster configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf"
+          },
+          "docs": "Retrieve all cluster configuration settings."
+        },
+        {
+          "info": {
+            "name": "Create or update configuration option",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update configuration option"
+        },
+        {
+          "info": {
+            "name": "Filter cluster configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf/filter",
+            "params": [
+              {
+                "name": "names",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query specific configuration by option names."
+        },
+        {
+          "info": {
+            "name": "Delete configuration option",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete configuration option"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Daemon",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List daemons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/daemon",
+            "params": [
+              {
+                "name": "daemon_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List cluster daemons with optional type filtering."
+        },
+        {
+          "info": {
+            "name": "Daemon action",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{manager_host}:{dashboard_port}/api/daemon/:daemon_name",
+            "params": [
+              {
+                "name": "daemon_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute a daemon action such as restart or upgrade."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CRUSH",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List CRUSH rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule"
+          },
+          "docs": "List CRUSH rule configuration for data placement."
+        },
+        {
+          "info": {
+            "name": "Create CRUSH rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create CRUSH rule"
+        },
+        {
+          "info": {
+            "name": "Delete CRUSH rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete CRUSH rule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
