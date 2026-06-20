@@ -8,7 +8,7 @@ description: >-
   pools, OSDs, hosts, monitors, RGW, RBD, CephFS, and cluster configuration.
   The API is OpenAPI 3.0 compliant and authenticates via JWT bearer tokens.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Storage
   - Distributed Storage
