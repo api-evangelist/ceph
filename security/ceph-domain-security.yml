@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: ceph.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug  1 14:48:35 2026 GMT
+  hsts: null
+- host: docs.ceph.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 03:52:16 2026 GMT
+  hsts: false
+domains:
+- domain: ceph.io
+  dnssec: false
+  caa:
+  - 0 issue "letsencrypt.org"
+  - 0 iodef "mailto:ceph-infra-admins@redhat.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: ceph.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

@@ -54,6 +54,12 @@ apis:
         url: https://github.com/ceph/ceph
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/ceph-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ceph-domain-security.yml
+  - type: Authentication
+    url: authentication/ceph-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ceph
   - type: Website
@@ -66,6 +72,8 @@ common:
     url: https://ceph.io/en/community/connect/
   - type: Foundation
     url: https://ceph.io/en/foundation/
+  - url: https://ceph.io/en/news/blog/feed.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
