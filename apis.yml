@@ -54,6 +54,8 @@ apis:
         url: https://github.com/ceph/ceph
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/ceph-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/ceph-vulnerability-disclosure.yml
   - type: DomainSecurity
