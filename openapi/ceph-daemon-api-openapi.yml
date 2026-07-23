@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: Ceph Manager REST Auth Daemon API
+  description: 'REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for
+
+    managing and monitoring a Ceph cluster, including pools, OSDs, hosts,
+
+    monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication
+
+    uses a JWT obtained from POST /api/auth, supplied via the Authorization
+
+    Bearer header. API versioning is negotiated via the Accept header using
+
+    application/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort
+
+    spec from public Ceph documentation; the canonical OpenAPI is served by
+
+    every Ceph Manager instance at /docs/api.json.
+
+    '
+  version: '1.0'
+  contact:
+    name: Ceph
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  license:
+    name: LGPL-2.1
+    url: https://github.com/ceph/ceph/blob/main/COPYING
+servers:
+- url: https://{manager_host}:{dashboard_port}/api
+  description: Ceph Manager dashboard
+  variables:
+    manager_host:
+      default: localhost
+    dashboard_port:
+      default: '8443'
+security:
+- bearerAuth: []
+tags:
+- name: Daemon
+paths:
+  /daemon:
+    get:
+      tags:
+      - Daemon
+      summary: List daemons
+      description: List cluster daemons with optional type filtering.
+      operationId: listDaemons
+      parameters:
+      - in: query
+        name: daemon_type
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Daemon list.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /daemon/{daemon_name}:
+    put:
+      tags:
+      - Daemon
+      summary: Daemon action
+      description: Execute a daemon action such as restart or upgrade.
+      operationId: daemonAction
+      parameters:
+      - in: path
+        name: daemon_name
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum:
+                  - start
+                  - stop
+                  - restart
+                  - redeploy
+      responses:
+        '200':
+          description: Action executed.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT obtained from POST /api/auth.

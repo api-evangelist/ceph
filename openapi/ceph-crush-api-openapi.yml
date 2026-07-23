@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: Ceph Manager REST Auth CRUSH API
+  description: 'REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for
+
+    managing and monitoring a Ceph cluster, including pools, OSDs, hosts,
+
+    monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication
+
+    uses a JWT obtained from POST /api/auth, supplied via the Authorization
+
+    Bearer header. API versioning is negotiated via the Accept header using
+
+    application/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort
+
+    spec from public Ceph documentation; the canonical OpenAPI is served by
+
+    every Ceph Manager instance at /docs/api.json.
+
+    '
+  version: '1.0'
+  contact:
+    name: Ceph
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  license:
+    name: LGPL-2.1
+    url: https://github.com/ceph/ceph/blob/main/COPYING
+servers:
+- url: https://{manager_host}:{dashboard_port}/api
+  description: Ceph Manager dashboard
+  variables:
+    manager_host:
+      default: localhost
+    dashboard_port:
+      default: '8443'
+security:
+- bearerAuth: []
+tags:
+- name: CRUSH
+paths:
+  /crush_rule:
+    get:
+      tags:
+      - CRUSH
+      summary: List CRUSH rules
+      description: List CRUSH rule configuration for data placement.
+      operationId: listCrushRules
+      responses:
+        '200':
+          description: CRUSH rules.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+    post:
+      tags:
+      - CRUSH
+      summary: Create CRUSH rule
+      operationId: createCrushRule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: CRUSH rule created.
+  /crush_rule/{name}:
+    delete:
+      tags:
+      - CRUSH
+      summary: Delete CRUSH rule
+      operationId: deleteCrushRule
+      parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: CRUSH rule removed.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT obtained from POST /api/auth.

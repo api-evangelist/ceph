@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Ceph Manager REST Auth Cluster API
+  description: 'REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for
+
+    managing and monitoring a Ceph cluster, including pools, OSDs, hosts,
+
+    monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication
+
+    uses a JWT obtained from POST /api/auth, supplied via the Authorization
+
+    Bearer header. API versioning is negotiated via the Accept header using
+
+    application/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort
+
+    spec from public Ceph documentation; the canonical OpenAPI is served by
+
+    every Ceph Manager instance at /docs/api.json.
+
+    '
+  version: '1.0'
+  contact:
+    name: Ceph
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  license:
+    name: LGPL-2.1
+    url: https://github.com/ceph/ceph/blob/main/COPYING
+servers:
+- url: https://{manager_host}:{dashboard_port}/api
+  description: Ceph Manager dashboard
+  variables:
+    manager_host:
+      default: localhost
+    dashboard_port:
+      default: '8443'
+security:
+- bearerAuth: []
+tags:
+- name: Cluster
+paths:
+  /cluster:
+    get:
+      tags:
+      - Cluster
+      summary: Get cluster status
+      description: Retrieve cluster health and status information.
+      operationId: getCluster
+      responses:
+        '200':
+          description: Cluster status.
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      tags:
+      - Cluster
+      summary: Update cluster state
+      description: Modify cluster operational state.
+      operationId: updateCluster
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Cluster updated.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT obtained from POST /api/auth.

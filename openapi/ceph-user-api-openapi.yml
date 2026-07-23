@@ -1,0 +1,122 @@
+openapi: 3.1.0
+info:
+  title: Ceph Manager REST Auth User API
+  description: 'REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for
+
+    managing and monitoring a Ceph cluster, including pools, OSDs, hosts,
+
+    monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication
+
+    uses a JWT obtained from POST /api/auth, supplied via the Authorization
+
+    Bearer header. API versioning is negotiated via the Accept header using
+
+    application/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort
+
+    spec from public Ceph documentation; the canonical OpenAPI is served by
+
+    every Ceph Manager instance at /docs/api.json.
+
+    '
+  version: '1.0'
+  contact:
+    name: Ceph
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  license:
+    name: LGPL-2.1
+    url: https://github.com/ceph/ceph/blob/main/COPYING
+servers:
+- url: https://{manager_host}:{dashboard_port}/api
+  description: Ceph Manager dashboard
+  variables:
+    manager_host:
+      default: localhost
+    dashboard_port:
+      default: '8443'
+security:
+- bearerAuth: []
+tags:
+- name: User
+paths:
+  /cluster/user:
+    get:
+      tags:
+      - User
+      summary: List Ceph users
+      description: List Ceph users and associated capability data.
+      operationId: listUsers
+      responses:
+        '200':
+          description: User list.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CephUser'
+    post:
+      tags:
+      - User
+      summary: Create Ceph user
+      description: Create a new Ceph user with permissions/capabilities.
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CephUser'
+      responses:
+        '201':
+          description: User created.
+    put:
+      tags:
+      - User
+      summary: Update Ceph user
+      description: Modify existing user capabilities.
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CephUser'
+      responses:
+        '200':
+          description: User updated.
+  /cluster/user/{user_entities}:
+    delete:
+      tags:
+      - User
+      summary: Delete Ceph user(s)
+      description: Remove one or more Ceph user accounts.
+      operationId: deleteUser
+      parameters:
+      - in: path
+        name: user_entities
+        required: true
+        schema:
+          type: string
+        description: Comma-separated list of user entity identifiers (e.g., client.admin).
+      responses:
+        '204':
+          description: User deleted.
+components:
+  schemas:
+    CephUser:
+      type: object
+      properties:
+        user_entity:
+          type: string
+        capabilities:
+          type: object
+          additionalProperties:
+            type: string
+        import_data:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT obtained from POST /api/auth.
