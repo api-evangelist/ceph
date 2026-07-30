@@ -8,7 +8,19 @@ description: >-
   pools, OSDs, hosts, monitors, RGW, RBD, CephFS, and cluster configuration.
   The API is OpenAPI 3.0 compliant and authenticates via JWT bearer tokens.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ceph.png
 tags:
   - Storage
   - Distributed Storage
@@ -23,36 +35,102 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: ceph:restful-api
-    name: Ceph RESTful API
-    description: >-
-      RESTful API exposed by the Ceph Manager dashboard module for managing
-      and monitoring a Ceph cluster, including pools, OSDs, hosts, monitors,
-      RGW, RBD, CephFS, users, and cluster configuration. Authentication uses
-      a JWT obtained from /api/auth, and versioning is negotiated via the
-      Accept header (application/vnd.ceph.api.v{major}.{minor}+json).
-    humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
-    baseURL: https://{manager_host}:{dashboard_port}/api
-    tags:
-      - Storage
-      - Cluster Management
-      - Pools
-      - OSD
-      - Monitors
-      - RGW
-      - RBD
-      - CephFS
-      - JWT
-    properties:
-      - type: Documentation
-        url: https://docs.ceph.com/en/latest/mgr/ceph_api/
-      - type: OpenAPI
-        url: https://{manager_host}:{dashboard_port}/docs/api.json
-      - type: Swagger UI
-        url: https://{manager_host}:{dashboard_port}/docs
-      - type: Source Code
-        url: https://github.com/ceph/ceph
-
+- aid: ceph:ceph-auth-api
+  name: Ceph Auth API
+  description: The Auth API from Ceph — 3 operation(s) for auth.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-auth-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
+- aid: ceph:ceph-cluster-api
+  name: Ceph Cluster API
+  description: The Cluster API from Ceph — 1 operation(s) for cluster.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - Cluster
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-cluster-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
+- aid: ceph:ceph-configuration-api
+  name: Ceph Configuration API
+  description: The Configuration API from Ceph — 3 operation(s) for configuration.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
+- aid: ceph:ceph-crush-api
+  name: Ceph CRUSH API
+  description: The CRUSH API from Ceph — 2 operation(s) for crush.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - CRUSH
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-crush-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
+- aid: ceph:ceph-daemon-api
+  name: Ceph Daemon API
+  description: The Daemon API from Ceph — 2 operation(s) for daemon.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - Daemon
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-daemon-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
+- aid: ceph:ceph-user-api
+  name: Ceph User API
+  description: The User API from Ceph — 2 operation(s) for user.
+  humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  baseURL: https://{manager_host}:{dashboard_port}/api
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/ceph-user-api-openapi.yml
+  - type: Documentation
+    url: https://docs.ceph.com/en/latest/mgr/ceph_api/
+  - type: Swagger UI
+    url: https://{manager_host}:{dashboard_port}/docs
+  - type: Source Code
+    url: https://github.com/ceph/ceph
 common:
   - type: AgenticAccess
     url: agentic-access/ceph-agentic-access.yml
