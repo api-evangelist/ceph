@@ -1,0 +1,24 @@
+{
+  "provider": "ceph",
+  "sources": [
+    "ceph-auth-api-openapi.yml",
+    "ceph-cluster-api-openapi.yml",
+    "ceph-configuration-api-openapi.yml",
+    "ceph-crush-api-openapi.yml",
+    "ceph-daemon-api-openapi.yml",
+    "ceph-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "ceph-auth-api-openapi.yml",
+    "ceph-cluster-api-openapi.yml",
+    "ceph-configuration-api-openapi.yml",
+    "ceph-crush-api-openapi.yml",
+    "ceph-daemon-api-openapi.yml",
+    "ceph-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
