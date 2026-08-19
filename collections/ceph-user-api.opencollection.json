@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST Auth User API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Ceph users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user"
+          },
+          "docs": "List Ceph users and associated capability data."
+        },
+        {
+          "info": {
+            "name": "Create Ceph user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Ceph user with permissions/capabilities."
+        },
+        {
+          "info": {
+            "name": "Update Ceph user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify existing user capabilities."
+        },
+        {
+          "info": {
+            "name": "Delete Ceph user(s)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster/user/:user_entities",
+            "params": [
+              {
+                "name": "user_entities",
+                "value": "",
+                "type": "path",
+                "description": "Comma-separated list of user entity identifiers (e.g., client.admin)."
+              }
+            ]
+          },
+          "docs": "Remove one or more Ceph user accounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

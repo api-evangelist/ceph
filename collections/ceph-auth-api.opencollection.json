@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST Auth API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain JWT token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate with username and password to obtain a JWT for subsequent calls."
+        },
+        {
+          "info": {
+            "name": "Validate token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth/check",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate the current bearer token."
+        },
+        {
+          "info": {
+            "name": "Logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/auth/logout"
+          },
+          "docs": "Revoke the current authentication session."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

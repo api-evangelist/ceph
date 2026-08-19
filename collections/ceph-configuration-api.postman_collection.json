@@ -1,0 +1,560 @@
+{
+  "item": [
+    {
+      "id": "401cddad-71a9-4f1a-be85-29fccb3fbeac",
+      "name": "Configuration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d36cd32-b823-4745-875a-d31fe6899404",
+          "name": "List cluster configuration",
+          "request": {
+            "name": "List cluster configuration",
+            "description": {
+              "content": "Retrieve all cluster configuration settings.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cluster_conf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e5e29d3-817a-485a-af28-7efb9d0eb1b7",
+              "name": "Configuration items.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cluster_conf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"value\": \"string\",\n    \"section\": \"string\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"level\": \"string\",\n    \"desc\": \"string\"\n  },\n  {\n    \"name\": \"string\",\n    \"value\": \"string\",\n    \"section\": \"string\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"level\": \"string\",\n    \"desc\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46c656ef-c776-4f23-baf1-9fe6e2f217b4",
+          "name": "Create or update configuration option",
+          "request": {
+            "name": "Create or update configuration option",
+            "description": {},
+            "url": {
+              "path": [
+                "cluster_conf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"section\": \"<string>\",\n  \"source\": \"<string>\",\n  \"type\": \"<string>\",\n  \"level\": \"<string>\",\n  \"desc\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a262a1ef-7ba0-4fff-b172-9337564fc041",
+              "name": "Configuration option set.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cluster_conf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"section\": \"<string>\",\n  \"source\": \"<string>\",\n  \"type\": \"<string>\",\n  \"level\": \"<string>\",\n  \"desc\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fbe5686-f793-444d-8516-21b255620248",
+          "name": "Filter cluster configuration",
+          "request": {
+            "name": "Filter cluster configuration",
+            "description": {
+              "content": "Query specific configuration by option names.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cluster_conf",
+                "filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "names",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "names",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f0f782d-b172-4ed0-a325-3399e107d462",
+              "name": "Matching configuration items.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cluster_conf",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "names",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "names",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"value\": \"string\",\n    \"section\": \"string\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"level\": \"string\",\n    \"desc\": \"string\"\n  },\n  {\n    \"name\": \"string\",\n    \"value\": \"string\",\n    \"section\": \"string\",\n    \"source\": \"string\",\n    \"type\": \"string\",\n    \"level\": \"string\",\n    \"desc\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "855ec2d5-5bed-46ac-865e-0d5c3c255866",
+          "name": "Delete configuration option",
+          "request": {
+            "name": "Delete configuration option",
+            "description": {},
+            "url": {
+              "path": [
+                "cluster_conf",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9cfe239e-8dea-425a-9cbe-8ba8527ee36c",
+              "name": "Configuration option removed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cluster_conf",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "manager_host"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8443",
+      "key": "dashboard_port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{manager_host}}:{{dashboard_port}}/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "44fd3bc5-c41f-465e-ab6b-822f91578cb8",
+    "name": "Ceph Manager REST Auth Configuration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for\nmanaging and monitoring a Ceph cluster, including pools, OSDs, hosts,\nmonitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication\nuses a JWT obtained from POST /api/auth, supplied via the Authorization\nBearer header. API versioning is negotiated via the Accept header using\napplication/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort\nspec from public Ceph documentation; the canonical OpenAPI is served by\nevery Ceph Manager instance at /docs/api.json.\n\n\nContact Support:\n Name: Ceph",
+      "type": "text/plain"
+    }
+  }
+}

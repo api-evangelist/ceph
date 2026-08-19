@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST Auth Configuration API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cluster configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf"
+          },
+          "docs": "Retrieve all cluster configuration settings."
+        },
+        {
+          "info": {
+            "name": "Create or update configuration option",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create or update configuration option"
+        },
+        {
+          "info": {
+            "name": "Filter cluster configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf/filter",
+            "params": [
+              {
+                "name": "names",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query specific configuration by option names."
+        },
+        {
+          "info": {
+            "name": "Delete configuration option",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster_conf/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete configuration option"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

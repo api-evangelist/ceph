@@ -1,0 +1,331 @@
+{
+  "item": [
+    {
+      "id": "e484b0c2-1006-45b2-9517-9a98309aae92",
+      "name": "Daemon",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a38d0344-dea0-4170-ae91-a4e92e3a0c97",
+          "name": "List daemons",
+          "request": {
+            "name": "List daemons",
+            "description": {
+              "content": "List cluster daemons with optional type filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "daemon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "daemon_type",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ada6a605-cc4a-49f5-8210-4cea9263d753",
+              "name": "Daemon list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "daemon"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "daemon_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa2cf8f5-e816-475a-ad03-c5180ee6de9d",
+          "name": "Daemon action",
+          "request": {
+            "name": "Daemon action",
+            "description": {
+              "content": "Execute a daemon action such as restart or upgrade.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "daemon",
+                ":daemon_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "daemon_name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{manager_host}}",
+                  "key": "manager_host"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{dashboard_port}}",
+                  "key": "dashboard_port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7d712a63-4884-42d2-b7c2-c2cc2a2fdbbb",
+              "name": "Action executed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "daemon",
+                    ":daemon_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "daemon_name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{manager_host}}",
+                      "key": "manager_host"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{dashboard_port}}",
+                      "key": "dashboard_port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "manager_host"
+    },
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8443",
+      "key": "dashboard_port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{manager_host}}:{{dashboard_port}}/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6cc1cef3-66a6-43f0-9d57-cb18be632702",
+    "name": "Ceph Manager REST Auth Daemon API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for\nmanaging and monitoring a Ceph cluster, including pools, OSDs, hosts,\nmonitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication\nuses a JWT obtained from POST /api/auth, supplied via the Authorization\nBearer header. API versioning is negotiated via the Accept header using\napplication/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort\nspec from public Ceph documentation; the canonical OpenAPI is served by\nevery Ceph Manager instance at /docs/api.json.\n\n\nContact Support:\n Name: Ceph",
+      "type": "text/plain"
+    }
+  }
+}

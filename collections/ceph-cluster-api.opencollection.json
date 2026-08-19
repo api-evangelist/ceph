@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST Auth Cluster API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cluster",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get cluster status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster"
+          },
+          "docs": "Retrieve cluster health and status information."
+        },
+        {
+          "info": {
+            "name": "Update cluster state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{manager_host}:{dashboard_port}/api/cluster",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify cluster operational state."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

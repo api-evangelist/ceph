@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ceph Manager REST Auth CRUSH API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CRUSH",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List CRUSH rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule"
+          },
+          "docs": "List CRUSH rule configuration for data placement."
+        },
+        {
+          "info": {
+            "name": "Create CRUSH rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create CRUSH rule"
+        },
+        {
+          "info": {
+            "name": "Delete CRUSH rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{manager_host}:{dashboard_port}/api/crush_rule/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete CRUSH rule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
