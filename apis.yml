@@ -27,6 +27,14 @@ tags:
   - Object Storage
   - Block Storage
   - File Storage
+  - Open-Source
+  - Software-Defined Storage
+tags_raw:
+  - Storage
+  - Distributed Storage
+  - Object Storage
+  - Block Storage
+  - File Storage
   - Open Source
   - Software-Defined Storage
 url: >-
@@ -41,6 +49,8 @@ apis:
   humanURL: https://docs.ceph.com/en/latest/mgr/ceph_api/
   baseURL: https://{manager_host}:{dashboard_port}/api
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
