@@ -8,6 +8,17 @@ description: >-
   pools, OSDs, hosts, monitors, RGW, RBD, CephFS, and cluster configuration.
   The API is OpenAPI 3.0 compliant and authenticates via JWT bearer tokens.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
