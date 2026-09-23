@@ -1,23 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Ceph Manager REST Auth Configuration API
+  title: Ceph Manager REST Configuration API
   description: 'REST API exposed by the Ceph Manager (ceph-mgr) dashboard module for
 
     managing and monitoring a Ceph cluster, including pools, OSDs, hosts,
 
-    monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication
-
-    uses a JWT obtained from POST /api/auth, supplied via the Authorization
-
-    Bearer header. API versioning is negotiated via the Accept header using
-
-    application/vnd.ceph.api.v{major}.{minor}+json. Generated as a best-effort
-
-    spec from public Ceph documentation; the canonical OpenAPI is served by
-
-    every Ceph Manager instance at /docs/api.json.
-
-    '
+    monitors, RGW, RBD, CephFS, users, and cluster configuration.'
   version: '1.0'
   contact:
     name: Ceph
