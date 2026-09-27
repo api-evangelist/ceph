@@ -82,18 +82,6 @@ paths:
         '200':
           description: Logged out.
 components:
-  responses:
-    Error:
-      description: Error response.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
-              code:
-                type: string
   schemas:
     AuthRequest:
       type: object
@@ -125,6 +113,18 @@ components:
           type: boolean
         pwdUpdateRequired:
           type: boolean
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+              code:
+                type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -42,7 +42,7 @@ tags:
   - Object Storage
   - Block Storage
   - File Storage
-  - Open-Source
+  - Open Source
   - Software-Defined Storage
 tags_raw:
   - Storage
@@ -52,6 +52,7 @@ tags_raw:
   - File Storage
   - Open Source
   - Software-Defined Storage
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ceph/refs/heads/main/apis.yml
 created: '2026-05-11'
