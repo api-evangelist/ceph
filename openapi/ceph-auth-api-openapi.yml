@@ -83,16 +83,6 @@ paths:
           description: Logged out.
 components:
   schemas:
-    AuthRequest:
-      type: object
-      required:
-      - username
-      - password
-      properties:
-        username:
-          type: string
-        password:
-          type: string
     AuthResponse:
       type: object
       properties:
@@ -113,6 +103,16 @@ components:
           type: boolean
         pwdUpdateRequired:
           type: boolean
+    AuthRequest:
+      type: object
+      required:
+      - username
+      - password
+      properties:
+        username:
+          type: string
+        password:
+          type: string
   responses:
     Error:
       description: Error response.
