@@ -1,0 +1,67 @@
+slug: ceph
+provider: Ceph
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: CRUSH
+  spec_file: ceph-crush-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: GET /crush_rule  listCrushRules  List CRUSH rules; POST /crush_rule  createCrushRule  Create
+    CRUSH rule
+  reason: CRUSH rules govern data placement across storage devices in a Ceph cluster — configuration of
+    storage infrastructure, mapping to IT Infrastructure Management (compute, storage, network).
+- tag: Cluster
+  spec_file: ceph-cluster-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.78
+  evidence: GET /cluster  getCluster  Get cluster status; PUT /cluster  updateCluster  Update cluster
+    state
+  reason: Managing the state and status of a distributed storage cluster is infrastructure management
+    (storage/compute estate), under IT Infrastructure Management; could also be read as IT Operations,
+    hence not maximal confidence.
+- tag: User
+  spec_file: ceph-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /cluster/user  createUser  Create Ceph user; DELETE /cluster/user/{user_entities}  deleteUser  Delete
+    Ceph user(s)
+  reason: Lifecycle management of Ceph cluster user entities and their access capabilities — identity
+    and access administration for an infrastructure platform. Technical account management, but it is
+    the IAM surface rather than generic plumbing.
+- tag: Configuration
+  spec_file: ceph-configuration-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /cluster_conf  listClusterConf  List cluster configuration; POST /cluster_conf  setClusterConf  Create
+    or update configuration option
+  reason: Configuration options of the Ceph storage cluster — infrastructure configuration management.
+    L2 chosen as IT Infrastructure Management since the configured object is the storage cluster itself;
+    some ambiguity with IT Operations Management.
+- tag: Daemon
+  spec_file: ceph-daemon-api-openapi.yml
+  capability_id: BC-600.40
+  capability_id_l1: BC-600
+  capability_name: IT Operations Management
+  confidence: 0.7
+  evidence: GET /daemon  listDaemons  List daemons; PUT /daemon/{daemon_name}  daemonAction  Daemon action
+  reason: Listing and acting on (start/stop/restart) cluster daemons is day-to-day operational control
+    of running infrastructure services — IT Operations Management; overlaps with infrastructure management.

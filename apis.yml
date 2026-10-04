@@ -158,6 +158,9 @@ apis:
   - type: Source Code
     url: https://github.com/ceph/ceph
 common:
+  - type: CapabilityMap
+    url: capabilities/ceph-capability-edges.yml
+    name: Ceph Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ceph-agentic-access.yml
   - type: VulnerabilityDisclosure
