@@ -1,0 +1,12 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://docs.ceph.com/en/latest/radosgw/s3/
+page: https://docs.ceph.com/en/latest/radosgw/s3/
+file: ceph-aws-s3-1.md
+bytes: 3683
+sha256: a3150f42aebd482ab441a8b9e543bf634b23b51b3815bdfb039968188146e0cd
+anchor: amazon-web-services
+shape: aws-s3
+classification: declares-compatibility
+quote: Ceph supports a RESTful API that is compatible with the basic data access model of the Amazon S3 API .
+note: text extracted from the provider's own page (tags stripped), saved for evidence

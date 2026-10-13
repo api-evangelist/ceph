@@ -1,0 +1,21 @@
+edges:
+- partner_name: Amazon Web Services
+  partner: amazon-web-services
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: aws-s3
+  type: docs
+  degree: declared-subset
+  evidence: https://docs.ceph.com/en/latest/radosgw/s3/
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/ceph/blob/main/evidence/compatibility/ceph-aws-s3-1.md
+  quote: Ceph supports a RESTful API that is compatible with the basic data access model of the Amazon S3 API .
+  supported_operations: []
+  unsupported_operations: []
+  supported_share: 0.0
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
