@@ -82,26 +82,6 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-cloud-native.py
   first_seen: '2026-10-15'
-- partner_name: Artifact Hub (artifact-hub)
-  partner: artifact-hub
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: artifact-hub
-  evidence: https://artifacthub.io/packages/search?repo=ceph-csi
-  mirror_of: artifact-hub/integrations/artifact-hub-integration-edges.yml
-  apps:
-  - ceph-csi-cephfs
-  - ceph-csi-rbd
-  listing_count: 1
-  detected: '2026-10-22'
-  detected_by: mirror-platform-listings.py
-  category: Artifact Hub listing (Helm chart)
-  badges:
-  - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
 - partner_name: OpenSSF Best Practices Badge (bestpractices.dev)
   partner: null
   partner_match: register
@@ -138,6 +118,62 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-openssf-best-practices-badges.py
   first_seen: '2026-10-22'
+- partner_name: Artifact Hub (artifact-hub)
+  partner: artifact-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: artifact-hub
+  evidence: https://artifacthub.io/packages/search?repo=ceph-csi
+  mirror_of: artifact-hub/integrations/artifact-hub-integration-edges.yml
+  apps:
+  - ceph-csi-cephfs
+  - ceph-csi-rbd
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Artifact Hub listing (Helm chart)
+  badges:
+  - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
+- partner_name: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: ansible-galaxy
+  evidence: https://galaxy.ansible.com/ui/repo/published/ceph/automation/
+  mirror_of: ansible/integrations/ansible-integration-edges.yml
+  apps:
+  - ceph.automation
+  - guits.orchestration
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: configuration-management content listing (Ansible collection)
+- partner_name: Chef Software (chef-supermarket)
+  partner: chef-software
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: chef-supermarket
+  evidence: https://supermarket.chef.io/cookbooks/ceph
+  mirror_of: chef-software/integrations/chef-software-integration-edges.yml
+  apps:
+  - ceph
+  - ceph-chef
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: configuration-management content listing (Chef cookbook)
 generated: '2026-10-13'
 method: searched
 source:
@@ -153,3 +189,5 @@ checked:
 - https://www.bestpractices.dev/en/projects.json
 - artifact-hub/integrations/artifact-hub-integration-edges.yml
 - https://www.bestpractices.dev/en/projects.json?page=N
+- ansible/integrations/ansible-integration-edges.yml
+- chef-software/integrations/chef-software-integration-edges.yml

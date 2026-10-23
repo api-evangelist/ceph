@@ -81,19 +81,6 @@
     detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
-- slug: ceph-artifact-hub-artifact-hub
-  label: Artifact Hub (artifact-hub)
-  partner: artifact-hub
-  partner_name: Artifact Hub (artifact-hub)
-  category: Artifact Hub listing (Helm chart)
-  type: marketplace
-  marketplace: artifact-hub
-  channel: partner-built
-  evidence: https://artifacthub.io/packages/search?repo=ceph-csi
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: ceph-openssf-best-practices-badge-bestpractices-dev
   label: OpenSSF Best Practices Badge (bestpractices.dev)
   partner_name: OpenSSF Best Practices Badge (bestpractices.dev)
@@ -128,5 +115,44 @@
       project lost its badge. badged_projects is context, never counted'
     detected_by: sweep-openssf-best-practices-badges.py
     detected: '2026-10-22'
+  status: not-a-workflow
+  arazzo: null
+- slug: ceph-artifact-hub-artifact-hub
+  label: Artifact Hub (artifact-hub)
+  partner: artifact-hub
+  partner_name: Artifact Hub (artifact-hub)
+  category: Artifact Hub listing (Helm chart)
+  type: marketplace
+  marketplace: artifact-hub
+  channel: partner-built
+  evidence: https://artifacthub.io/packages/search?repo=ceph-csi
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ceph-ansible-ansible-galaxy
+  label: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_name: Ansible (ansible-galaxy)
+  category: configuration-management content listing (Ansible collection)
+  type: marketplace
+  marketplace: ansible-galaxy
+  channel: partner-built
+  evidence: https://galaxy.ansible.com/ui/repo/published/ceph/automation/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: ceph-chef-software-chef-supermarket
+  label: Chef Software (chef-supermarket)
+  partner: chef-software
+  partner_name: Chef Software (chef-supermarket)
+  category: configuration-management content listing (Chef cookbook)
+  type: marketplace
+  marketplace: chef-supermarket
+  channel: partner-built
+  evidence: https://supermarket.chef.io/cookbooks/ceph
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
