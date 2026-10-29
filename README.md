@@ -1,4 +1,4 @@
-# Ceph (ceph)
+# Ceph
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,109 @@
 
 Ceph is an open source, distributed storage platform that provides unified object, block, and file storage on commodity hardware with no single point of failure. The Ceph Manager (ceph-mgr) ships with a RESTful API that exposes the same operations available in the Ceph Dashboard for managing pools, OSDs, hosts, monitors, RGW, RBD, CephFS, and cluster configuration. The API is OpenAPI 3.0 compliant and authenticates via JWT bearer tokens.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ceph/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ceph/refs/heads/main/apis.yml)
+**Areas:** Storage · Distributed Storage · Object Storage · Block Storage · File Storage · Open Source · Software-Defined Storage
 
-## Scope
+## Ceph on APIs.io
 
-- **Type:** Index
+Everything profiled for Ceph is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ceph/](https://apis.io/providers/ceph/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Storage
-- Distributed Storage
-- Object Storage
-- Block Storage
-- File Storage
-- Open Source
-- Software-Defined Storage
+- [Ceph Auth API](https://apis.io/apis/ceph/ceph-auth-api/) — The Auth API from Ceph — 3 operation(s) for auth.
+- [Ceph Cluster API](https://apis.io/apis/ceph/ceph-cluster-api/) — The Cluster API from Ceph — 1 operation(s) for cluster.
+- [Ceph Configuration API](https://apis.io/apis/ceph/ceph-configuration-api/) — The Configuration API from Ceph — 3 operation(s) for configuration.
+- [Ceph CRUSH API](https://apis.io/apis/ceph/ceph-crush-api/) — The CRUSH API from Ceph — 2 operation(s) for crush.
+- [Ceph Daemon API](https://apis.io/apis/ceph/ceph-daemon-api/) — The Daemon API from Ceph — 2 operation(s) for daemon.
+- [Ceph User API](https://apis.io/apis/ceph/ceph-user-api/) — The User API from Ceph — 2 operation(s) for user.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Ceph RESTful API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-RESTful API exposed by the Ceph Manager dashboard module for managing and monitoring a Ceph cluster, including pools, OSDs, hosts, monitors, RGW, RBD, CephFS, users, and cluster configuration. Authentication uses a JWT obtained from /api/auth, and versioning is negotiated via the Accept header (application/vnd.ceph.api.v{major}.{minor}+json).
+- [Ceph Agentic Access](https://apis.io/agentic-access/ceph/ceph-agentic-access/)
 
-- **Human URL:** [https://docs.ceph.com/en/latest/mgr/ceph_api/](https://docs.ceph.com/en/latest/mgr/ceph_api/)
-- **Base URL:** `https://{manager_host}:{dashboard_port}/api`
+#### Collections (7)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Storage
-- Cluster Management
-- Pools
-- OSD
-- Monitors
-- RGW
-- RBD
-- CephFS
-- JWT
+- [Ceph Manager REST API](https://apis.io/collections/ceph/open-ceph/)
+- [Ceph Manager REST Auth API](https://apis.io/collections/ceph/open-ceph-auth-api/)
+- [Ceph Manager REST Auth Cluster API](https://apis.io/collections/ceph/open-ceph-cluster-api/)
+- [Ceph Manager REST Auth Configuration API](https://apis.io/collections/ceph/open-ceph-configuration-api/)
+- [Ceph Manager REST Auth CRUSH API](https://apis.io/collections/ceph/open-ceph-crush-api/)
+- [Ceph Manager REST Auth Daemon API](https://apis.io/collections/ceph/open-ceph-daemon-api/)
+- [Ceph Manager REST Auth User API](https://apis.io/collections/ceph/open-ceph-user-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://docs.ceph.com/en/latest/mgr/ceph_api/)
-- [OpenAPI](https://{manager_host}:{dashboard_port}/docs/api.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Swagger  U I](https://{manager_host}:{dashboard_port}/docs)
-- [Source  Code](https://github.com/ceph/ceph)
-- [Postman Collection](collections/ceph.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ceph.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Ceph Authentication](https://apis.io/security/ceph/ceph-authentication/)
+- [Ceph Domain Security](https://apis.io/security/ceph/ceph-domain-security/)
+- [Ceph Vulnerability Disclosure](https://apis.io/security/ceph/ceph-vulnerability-disclosure/)
 
-- [LinkedIn](https://www.linkedin.com/company/ceph)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://ceph.io)
 - [Documentation](https://docs.ceph.com)
-- [GitHub Organization](https://github.com/ceph)
-- [Mailing  Lists](https://ceph.io/en/community/connect/)
-- [Foundation](https://ceph.io/en/foundation/)
+- [Blog](https://ceph.io/en/news/blog/feed.xml)
+- [GitHub](https://github.com/ceph)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 46.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 0.0 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ceph/](https://apis.io/providers/ceph/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ceph: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ceph/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
